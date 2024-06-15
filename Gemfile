@@ -66,6 +66,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "tailwindcss-rails", "~> 2.6"
-
 gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'sassc-rails'

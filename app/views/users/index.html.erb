@@ -1,0 +1,17 @@
+<div class="">
+  <input type="text" class=""/>
+  <h2>Users</h2>
+  <div class="">
+    <ul>
+      <% @users.each do |user| %>
+        <li>
+          <img src="<%= "https://picsum.photos/id/#{user.id}/36/36" %>" alt="User Image"/>
+          <%= user.name %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+<%= link_to "Add New User", new_user_path %>
+
+</div>

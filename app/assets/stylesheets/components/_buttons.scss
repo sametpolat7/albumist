@@ -1,0 +1,17 @@
+@import "mixins/media_queries";
+
+.btn {
+  padding: .25rem .5rem;
+  border: 1px solid #7F3FBF;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 600;
+
+  @include to_tablet {
+    padding: .5rem 1rem;
+  }
+
+  @include to_desktop {
+    padding: .75rem 2rem;
+  }
+}

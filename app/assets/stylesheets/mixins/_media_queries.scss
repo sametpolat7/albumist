@@ -1,0 +1,31 @@
+$breakpoint_tablet: 768px;
+$breakpoint_desktop: 1200px;
+
+@mixin to_tablet {
+  @media (min-width: $breakpoint_tablet) {
+    @content;
+  }
+}
+
+@mixin to_desktop {
+  @media (min-width: $breakpoint_desktop) {
+    @content;
+  }
+}
+
+
+// .header {
+//   background-color: #333;
+
+//   @include respond-to-mobile {
+//     background-color: #555;
+//   }
+
+//   @include respond-to-tablet {
+//     background-color: #777;
+//   }
+
+//   @include respond-to-desktop {
+//     background-color: #999;
+//   }
+// }

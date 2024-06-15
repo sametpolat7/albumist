@@ -1,0 +1,41 @@
+@import "mixins/media_queries";
+
+.navbar {
+  height: 3rem;
+  border-bottom: 1px solid gray;
+
+  @include to_tablet {
+    height: 4rem;
+  }
+
+  @include to_desktop {
+    height: 5rem;
+  }
+
+    .brand {
+      display: flex;
+      align-items: center;
+    
+        .brand__logo {
+          width: 24px;
+          height: 24px;
+        }
+    
+        .brand__title {
+          font-size: 1.5rem;
+          font-weight: 600;
+          background: linear-gradient(to right, #e32636, #7F3FBF,);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+
+          @include to_tablet {
+            font-size: 2rem;
+          }
+        
+          @include to_desktop {
+            font-size: 3rem;
+          }
+        }
+    }
+}
