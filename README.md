@@ -1,24 +1,22 @@
-# README
+# Albumist 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Introduction
 
-Things you may want to cover:
+## How can install it
 
-* Ruby version
+## How can run fetch task
 
-* System dependencies
+## How its works?
 
-* Configuration
+## Possible Problems
+Step 1: Download the cacert.pem File
+Go to https://curl.se/ca/cacert.pem.
+Download the cacert.pem file and save it to a known location on your system, e.g., C:\RailsInstaller\cacert.pem.
+Step 2: Configure Ruby to Use the Certificate
+You can set the SSL_CERT_FILE environment variable in your Rake task or your command prompt.
 
-* Database creation
+Option 1: Setting the Environment Variable in the Command Prompt
+Open the command prompt.
+Set the environment variable:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+set SSL_CERT_FILE=C:\RailsInstaller\cacert.pem
