@@ -1,0 +1,30 @@
+@import "mixins/media_queries";
+
+.footer {
+  font-size: .7rem;
+  font-weight: 600;
+
+  @include to_tablet {
+    font-size: .85rem;
+  }
+
+  @include to_desktop {
+    font-size: 1rem;
+  }
+
+    .footer__item {
+      width: 20px;
+      height: 20px;
+      margin-left: .5rem;
+
+      @include to_tablet {
+        width: 24px;
+        height: 24px;
+      }
+    
+      @include to_desktop {
+        width: 28px;
+        height: 28px;
+      }
+    }
+}

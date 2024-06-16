@@ -25,8 +25,28 @@
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .items-center {
   align-items: center;
+}
+
+.min-h-dvh {
+  min-height: 100dvh;
+}
+
+.ml-05 {
+  margin-left: .5rem;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.ml-2 {
+  margin-left: 2rem;
 }
 
 .border {

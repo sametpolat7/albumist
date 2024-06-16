@@ -8,15 +8,15 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%= favicon_link_tag 'favicon.ico' %>
+    <%= favicon_link_tag "favicon.ico" %>
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flash' %>
+    <%= render "partials/navbar" %>
+    <%= render "partials/flash" %>
     <main class="container">
       <%= yield %>
     </main>
-    <%= render 'shared/footer' %>
+    <%= render "partials/footer" %>
   </body>
 </html>

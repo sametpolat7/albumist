@@ -1,15 +1,15 @@
 @import "mixins/media_queries";
 
 .navbar {
-  height: 3rem;
+  height: 2.5rem;
   border-bottom: 1px solid gray;
 
   @include to_tablet {
-    height: 4rem;
+    height: 3.5rem;
   }
 
   @include to_desktop {
-    height: 5rem;
+    height: 4rem;
   }
 
     .brand {
@@ -22,7 +22,7 @@
         }
     
         .brand__title {
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           font-weight: 600;
           background: linear-gradient(to right, #e32636, #7F3FBF,);
           -webkit-background-clip: text;
@@ -30,11 +30,11 @@
           color: transparent;
 
           @include to_tablet {
-            font-size: 2rem;
+            font-size: 1.75rem;
           }
         
           @include to_desktop {
-            font-size: 3rem;
+            font-size: 2.5rem;
           }
         }
     }

@@ -1,17 +1,13 @@
-<div class="">
-  <input type="text" class=""/>
-  <h2>Users</h2>
-  <div class="">
-    <ul>
-      <% @users.each do |user| %>
-        <li>
-          <img src="<%= "https://picsum.photos/id/#{user.id}/36/36" %>" alt="User Image"/>
-          <%= user.name %>
-        </li>
-      <% end %>
-    </ul>
+<div class="homepage min-h-dvh">
+  <div class="search-bar col-md-8 col-xl-6" data-controller="search">
+    <input type="text" id="search" data-action="input->search#query" required>
+    <label id="search__label" for="search">Search Users</label>
+    <button data-action="click->search#clear">
+      <%= image_tag "x_mark.svg", alt: "Delete All", class: "search__x-mark" %>
+    </button>
   </div>
 
-<%= link_to "Add New User", new_user_path %>
-
+  <div id="users-list" data-turbo-frame="users_list">
+    <%= render 'users_list', users: @users %>
+  </div>
 </div>

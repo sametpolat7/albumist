@@ -1,0 +1,62 @@
+@import "mixins/media_queries";
+
+.homepage {
+
+  .search-bar {
+    position: relative;
+    margin: 2rem auto 1rem;
+
+    #search {
+      width: 100%;
+      padding: .5rem 1rem;
+      border-radius: 2rem;
+      border: 2px solid #ccc;
+      outline: none;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: #2b89d0;
+      }
+
+      &:focus ~ #search__label, &:valid ~ #search__label {
+          top: -15px;
+          left: 30px;
+          padding: .2rem .4rem;
+          background-color: white;
+          color: #2b89d0;
+        }
+    }
+
+    #search__label {
+      position: absolute;
+      top: 9px;
+      left: 17px;
+      color: #999999;
+      transition: 0.3s ease-out;
+    }
+
+    .search__x-mark {
+      position: absolute;
+      top: 6px;
+      left: 87%;
+      padding: .35rem .5rem;
+      border-radius: 50%;
+
+      @include to_tablet {
+        left: 90%;
+
+          &:hover {
+            background-color: #f1f3f4;
+          }
+      }
+    
+      @include to_desktop {
+        left: 92%;
+
+          &:hover {
+            background-color: #f1f3f4;
+          }
+      }
+    }
+  }
+}

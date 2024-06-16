@@ -2,7 +2,16 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def index
-    @users = User.order(:name)
+    if params[:search]
+      @users = User.where("username ILIKE ?", "%#{params[:search]}%").order(:name)
+    else
+      @users = User.order(:name)
+    end
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream { render partial: 'users_list', formats: [:html],  locals: { users: @users } }
+    end
   end
 
   def show
@@ -51,6 +60,6 @@ class UsersController < ApplicationController
       :phone,
       :website,
       :company
-      )
+    )
   end
 end

@@ -34,3 +34,33 @@ input, textarea, select, button {
   font-size: inherit;
   line-height: inherit;
 }
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    appearance: none;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+    outline: none;
+}
+
+input:-webkit-autofill {
+  appearance: none !important;
+  background-image: none !important;
+  background-color: #fff !important;
+  color: #000 !important;
+  border: 1px solid #ccc !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
