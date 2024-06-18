@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Albumist</title>
+    <title>Albumist | Your memories, our promise.</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <%# Prevent sending requests by hovering the mouse %>
+    <meta name="turbo-prefetch" content="false">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%= favicon_link_tag "favicon.ico" %>
+    <%= favicon_link_tag "favicon.png" %>
   </head>
 
   <body>
     <%= render "partials/navbar" %>
     <%= render "partials/flash" %>
     <main class="container">
+      <%= turbo_frame_tag "modal" %>
       <%= yield %>
     </main>
     <%= render "partials/footer" %>

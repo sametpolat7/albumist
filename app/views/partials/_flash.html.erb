@@ -1,0 +1,10 @@
+<% flash.each do |type, message| %>
+  <div>
+    <div class="alert alert-<%= type %> alert-dismissible" data-controller="flash">
+      <%= message %>
+      <button class="close-button" data-action="click->flash#close" aria-label="Close">
+        <%= image_tag "x_mark.svg" %>
+      </button>
+    </div>
+  </div>
+<% end %>

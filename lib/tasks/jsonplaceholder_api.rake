@@ -10,7 +10,9 @@ namespace :jsonplaceholder_api do
         request = Net::HTTP::Get.new(uri)
         http.request(request)
       end
+
       JSON.parse(response.body)
+
     rescue StandardError => e
       puts "Failed to fetch data from #{url}: #{e.message}"
       []
@@ -31,7 +33,6 @@ namespace :jsonplaceholder_api do
 
     begin
       ActiveRecord::Base.transaction do
-
         users.each do |user_data|
           user = User.find_or_initialize_by(id: user_data['id'])
           user.update!(
@@ -68,8 +69,13 @@ namespace :jsonplaceholder_api do
           )
           puts "Photo #{photo.id} - #{photo.title} updated/created."
         end
-
       end
+
+      # Reset the primary keys after the data has been inserted.
+      ActiveRecord::Base.connection.tables.each do |table_name|
+        ActiveRecord::Base.connection.reset_pk_sequence!(table_name)
+      end
+
     rescue ActiveRecord::RecordInvalid => e
       puts "Database update failed: #{e.message}"
       raise ActiveRecord::Rollback

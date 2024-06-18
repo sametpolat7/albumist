@@ -4,58 +4,63 @@
 
   .search-bar {
     position: relative;
-    margin: 2rem auto 1rem;
+    margin: 2rem auto;
 
     #search {
       width: 100%;
-      padding: .5rem 1rem;
+      padding: .65rem 1.25em;
       border-radius: 2rem;
+      background-color: #fafafa;
       border: 2px solid #ccc;
       outline: none;
       transition: all 0.3s ease;
 
       &:focus {
         border-color: #2b89d0;
+        background-color: #fff;
+      }
+
+      &:valid {
+        border-color: #2b89d0;
+        background-color: #fff;
       }
 
       &:focus ~ #search__label, &:valid ~ #search__label {
           top: -15px;
           left: 30px;
           padding: .2rem .4rem;
-          background-color: white;
+          background-color: #fff;
+          border-radius: 36px;
           color: #2b89d0;
         }
     }
 
     #search__label {
       position: absolute;
-      top: 9px;
-      left: 17px;
+      top: 11px;
+      left: 23px;
+      cursor: text;
       color: #999999;
       transition: 0.3s ease-out;
     }
 
     .search__x-mark {
       position: absolute;
-      top: 6px;
+      top:7px;
       left: 87%;
-      padding: .35rem .5rem;
+      padding: .45rem .55rem;
       border-radius: 50%;
 
       @include to_tablet {
         left: 90%;
-
-          &:hover {
-            background-color: #f1f3f4;
-          }
       }
     
       @include to_desktop {
         left: 92%;
 
-          &:hover {
-            background-color: #f1f3f4;
-          }
+        &:hover {
+          background-color: #99999938;
+        }
       }
     }
   }

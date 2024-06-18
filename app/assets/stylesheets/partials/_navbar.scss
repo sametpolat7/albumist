@@ -1,41 +1,59 @@
 @import "mixins/media_queries";
 
 .navbar {
-  height: 2.5rem;
-  border-bottom: 1px solid gray;
+  height: 3.5rem;
+  background-color: #fafafa;
+  margin-bottom: 1rem;
 
   @include to_tablet {
-    height: 3.5rem;
+    height: 4rem;
+    margin-bottom: 2rem;
   }
 
   @include to_desktop {
-    height: 4rem;
+    height: 4.5rem;
+    margin-bottom: 3rem;
   }
 
-    .brand {
-      display: flex;
-      align-items: center;
+  .brand {
+    .brand__logo {
+      width: 36px;
+      height: 28px;
+
+      @include to_tablet {
+        width: 48px;
+        height: 40px;
+      }
+  
+      @include to_desktop {
+        width: 64px;
+        height: 54px;
+      }
+    }
+
+    .brand__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: linear-gradient(to right, #2b89d0, #7F3FBF, #e32636);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      transition: all .2s ease;
+
+      @include to_tablet {
+        font-size: 2rem;
+      }
     
-        .brand__logo {
-          width: 24px;
-          height: 24px;
-        }
-    
-        .brand__title {
-          font-size: 1.25rem;
-          font-weight: 600;
-          background: linear-gradient(to right, #e32636, #7F3FBF,);
+      @include to_desktop {
+        font-size: 2.5rem;
+
+        &:hover {
+          background: linear-gradient(to right, #2b89d0, #2b89d0);
           -webkit-background-clip: text;
           background-clip: text;
-          color: transparent;
-
-          @include to_tablet {
-            font-size: 1.75rem;
-          }
-        
-          @include to_desktop {
-            font-size: 2.5rem;
-          }
+          color: transparent; 
         }
+      }
     }
+  }
 }

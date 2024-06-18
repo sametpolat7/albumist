@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.turbo_stream { render partial: 'users_list', formats: [:html],  locals: { users: @users } }
+      format.turbo_stream { render partial: "partials/users_list", formats: [:html],  locals: { users: @users } }
     end
   end
 
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, notice: 'User was successfully created.'
+      redirect_to @user, notice: "User was successfully created."
     else
       render :new
     end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
+      redirect_to @user, notice: "User was successfully updated."
     else
       render :edit
     end

@@ -1,0 +1,21 @@
+.alert {
+  position: relative;
+  display: inline-block;
+  padding: .5rem 1.5rem;
+  border-radius: 16px;
+ }
+
+.alert-success, .alert-notice {
+  color: #4bb543;
+  border: 1px solid #4bb543
+}
+
+.alert-alert {
+  color: #bb2124;
+  border: 1px solid #bb2124
+}
+
+.close-button {
+  position: absolute;
+  top: -12px;
+}

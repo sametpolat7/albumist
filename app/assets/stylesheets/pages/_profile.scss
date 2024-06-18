@@ -1,0 +1,129 @@
+@import "mixins/media_queries";
+
+.profile {
+  margin-top: 2rem;
+
+  @include to_desktop {
+    display: flex;
+  }  
+
+  .profile__user {
+  
+    .profile__images {
+      position: relative;
+      overflow: hidden;
+  
+      &>:last-child {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -20%);
+        border: 3px solid #999999;
+        border-radius: 50%;
+      }
+    }
+  
+    .profile__info {
+      height: 24rem;
+      margin: 2rem 0;
+      padding: 2rem 1rem;
+      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+      border-radius: 6px;
+      font-size: 12px;
+
+      @include to_tablet {
+        height: 28rem;
+        font-size: 14px;
+      }
+    
+      @include to_desktop {
+        height: 32rem;
+        font-size: 16px;
+      }
+
+      &>:nth-child(1) {
+        font-size: 20px;
+
+        @include to_tablet {
+          font-size: 24px;
+        }
+      
+        @include to_desktop {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+
+  .profile__albums {
+    margin-top: 4rem;
+
+    @include to_desktop {
+      margin-left: 4rem;
+      margin-top: 0;
+    }
+
+    .profile__albums__title {
+      font-size: 2rem;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 3rem;
+    }
+
+    .albums__item {
+      height: 10rem;
+      padding: 0 1rem;
+      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+      border-radius: 8px;
+      margin-bottom: 3rem;
+      overflow: hidden;
+
+      @include to_tablet {
+        padding: 0 1.25rem;
+      }
+
+      @include to_desktop {
+        padding: 0 2rem;
+      }
+
+      .albums__item__image {
+
+        img {
+        width: 48px;
+        height: 48px;
+        box-shadow: 
+        blue 0px 0px 0px 2px inset,
+        rgb(255, 255, 255) 5px -5px 0px -3px,
+        rgb(31, 193, 27) 5px -5px,
+        rgb(255, 255, 255) 10px -10px 0px -3px,
+        rgb(255, 217, 19) 10px -10px,
+        rgb(255, 255, 255) 15px -15px 0px -3px, 
+        rgb(255, 156, 85) 15px -15px,
+        rgb(255, 255, 255) 20px -20px 0px -3px,
+        rgb(255, 85, 85) 20px -20px;
+        }
+      }
+
+      .albums__item__title {
+        text-align: center;
+        font-weight: 600;
+        font-style: italic;
+        font-size: 14px;
+        color: #172554;
+        padding: 0 1rem;
+
+        @include to_tablet {
+          font-size: 16px;
+        }
+  
+        @include to_desktop {
+          font-size: 18px;
+        }
+      }
+      .albums__item__info {
+        font-weight: 600;
+        text-align: end;
+      }
+    }
+  }
+}

@@ -2,6 +2,8 @@
 
 ## Introduction
 
+Attention please read ho can run fetch task before pulling.
+
 ## How can install it
 
 ## How can run fetch task
@@ -19,4 +21,4 @@ Option 1: Setting the Environment Variable in the Command Prompt
 Open the command prompt.
 Set the environment variable:
 
-set SSL_CERT_FILE=C:\RailsInstaller\cacert.pem
+set SSL_CERT_FILE=C:\certificates\cacert.pem

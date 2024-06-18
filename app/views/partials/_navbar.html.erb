@@ -1,15 +1,13 @@
 <nav class="navbar container flex items-center">
   <div class="flex justify-between items-center col-md-12">
-    <div class="brand">
-      <%# <%= image_tag("albumist_logo.png",  alt: "Brand Logo", class: "brand__logo") %> 
+    <div class="brand flex items-center">
+      <%= image_tag("albumist_logo.png",  alt: "Brand Logo", class: "brand__logo") %> 
       <p class="brand__title">
-        Albumist
+        <%= link_to "Albumist", root_path %>
       </p>
     </div>
     <div>
-      <% if User.exists? %>
-        <%= link_to "Create User", new_user_path, class: "navbar__button" %>        
-      <% end %>
+      <%= link_to "Create User", new_user_path, data: { turbo_frame: "modal" }, class: "btn" %>
     </div>
   </div>
 </nav>
