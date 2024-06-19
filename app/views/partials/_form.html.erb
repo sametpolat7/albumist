@@ -1,32 +1,77 @@
-<%= form_with(model: @user, local: true) do |form| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="form col-md-8 col-xl-6 mx-auto ">
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <%= form_with(model: @user, local: true) do |form| %>
+    <% if @user.errors.any? %>
+      <div class="form__error">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form__field flex flex-col items-center">
+      <div>
+        <br>
+        <h4>Personal Information (Required)</h4>
+        <br>
+        <div class="field">
+          <%= form.text_field :name, autofocus: true, placeholder: "Name" %>
+        </div>
+
+        <div class="field">
+          <%= form.text_field :username, placeholder: "Username" %>
+        </div>
+
+        <div class="field">
+          <%= form.email_field :email, placeholder: "E-mail" %>
+        </div>
+
+        <div class="field">
+          <%= form.text_field :phone, placeholder: "Phone" %>
+        </div>
+
+        <div class="field">
+          <%= form.text_field :company, placeholder: "Company" %>
+        </div>
+      </div>
+
+      <br>
+
+      <div>
+        <br>
+        <h4>Address (Optional)</h4>
+        <br>
+        <div class="field">
+          <%= form.text_field :street, placeholder: "Street" %>
+        </div>
+
+        <div class="field">
+          <%= form.text_field :suite, placeholder: "Suite" %>
+        </div>
+
+        <div class="field">
+          <%= form.text_field :city, placeholder: "City" %>
+        </div>
+
+        <div class="field">
+          <%= form.text_field :zipcode, placeholder: "Zipcode" %>
+        </div>
+
+        <div class="field">
+          <%= form.text_field :website, placeholder: "Website" %>
+        </div>
+
+      </div>
+
+      <br>
+
+      <div class="actions">
+        <%= form.submit "Submit", class: "submit" %>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

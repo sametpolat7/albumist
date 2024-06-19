@@ -1,0 +1,84 @@
+@import "mixins/media_queries";
+
+#album_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.411);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  &.hide {
+    display: none;
+  }
+
+  .modal__container {
+    position: relative;
+    height: 600px;
+    margin:0 1rem;
+    background-color: #fafafa;
+    overflow-y: scroll;
+
+    @include to_tablet {
+      margin:0 2rem;
+    }
+
+    @include to_desktop {
+      margin:0 3rem;
+    }
+
+    #close {
+      position: absolute;
+      top: 7px;
+      right: 12px;
+      padding: .25rem .75rem;
+      border-radius: 50%;
+
+      @include to_desktop {
+        
+        &:hover {
+          background-color: #e9e9e9;
+        }
+      }
+  
+      img {
+        width: 36px;
+      }
+    }
+
+    .modal__info {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 2rem;
+      font-weight: 600;
+
+      .modal__info__title {
+        margin: 0 2rem;
+        font-size: 17px;
+
+        @include to_tablet {
+          margin: 0 3rem;
+          font-size: 19px;
+        }
+    
+        @include to_desktop {
+          margin: 0 4rem;
+          font-size: 24px;
+        }
+      }
+    }
+
+    .modal__photos {
+      margin: 0 1rem;
+
+      @include to_desktop {
+        margin: 0 3rem;
+      }
+    }
+
+  }
+}

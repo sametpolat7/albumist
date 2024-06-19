@@ -18,23 +18,17 @@
       <br>
 
       <span>
-        <span class="fw-600">
-          Works at:
-        </span>
+        <span class="fw-600">Works at:</span>
         <%= @user.company %>
       </span>
 
       <span>
-        <span class="fw-600">
-          E-mail:
-        </span>
+        <span class="fw-600">E-mail:</span>
         <%= @user.email %>
       </span>
 
       <span>
-        <span class="fw-600">
-          Tel:
-        </span>
+        <span class="fw-600">Tel:</span>
         <%= @user.phone %>
       </span>
 
@@ -42,7 +36,7 @@
 
       <address>
         <span><%= @user.street %></span>
-        <span><%= @user.suite %> /</span>
+        <span><%= @user.suite %></span>
         <span><%= @user.city %></span>
         <br>
         <span><%= @user.zipcode %></span>
@@ -57,12 +51,8 @@
       <br><br>
 
       <div class="mx-auto">
-        <button class="btn-dng">
-          <%= link_to "Back", users_path %>
-        </button>
-        <button class="btn">
-          <%= link_to "Edit", edit_user_path(@user), data: { turbo_frame: "modal" } %>
-        </button>
+        <%= link_to "Back", users_path, class: "btn-dng" %>
+        <%= link_to "Edit", edit_user_path(@user), class: "btn" %>
       </div>
     </div>
 
@@ -74,27 +64,54 @@
       <%= @user.name %>'s Albums
     </h2>
 
-    <div>
-      <% @user.albums.each do |album| %>
-        <div class="albums__item flex">
-
-          <div class="flex items-center albums__item__image">
-            <%= image_tag("#{album.photos[0].thumbnail_url}") %>
+    <% if @user.albums.empty? %>
+      <h2 class="t-center">Album not found.</h2>
+    <% else %>
+    <div data-controller="modal">
+      <% @user.albums.each_with_index do |album, index| %>
+        <div
+        class="albums__item flex items-center"
+        data-action="click->modal#showModal"
+        data-album-title="<%= album.title %>"
+        >
+          <div class="albums__item__image">
+            <%= image_tag(album.photos[0].thumbnail_url) %>
           </div>
-
-          <div class="flex flex-col justify-around ml-1 w-100">
-            <div class="albums__item__title">
+          <div class="albums__item__title mx-auto">
+            <h2>
+              <%= "Album #{index + 1}" %>
+            </h2>
+            <div>
               <%= album.title %>
             </div>
-            <div class="albums__item__info">
-              Photos:
-              <%= album.photos.count %>
+          </div>
+        </div>
+
+        <div id="album_modal" class="hide" data-modal-target="modal">
+          <div class="modal__container col-md-8 col-xl-6">
+            <button id="close" data-action="click->modal#hideModal">
+              <%= image_tag "x_mark.svg" %>
+            </button>
+            <div class="modal__info">
+              <h2 class="modal__info__title" data-modal-target="title"></h2>
+              <br>
+              <p>Created at: <%= album.created_at.strftime('%d/%m/%y') %></p>
+              <p><%= album.user.name %></p>
+            </div>
+            <div class="modal__photos">
+              <h2 class="t-center">Total Photos: <%= album.photos.count %></h2>
+              <br>
+              <% album.photos.each do |photo| %>
+                <span>
+                  <%= image_tag(photo.thumbnail_url) %>
+                </span>
+              <% end %>
             </div>
           </div>
-
         </div>
+
       <% end %>
     </div>
+    <% end %>
   </div>
-
 </div>

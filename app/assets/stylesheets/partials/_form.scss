@@ -1,0 +1,30 @@
+.form {
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+
+  .form__error {
+    padding: 1rem;
+    text-align: center;
+    color: #e32636;
+  }
+
+  .form__field {
+    padding: 1rem;
+
+    .field {
+      margin-bottom: 1rem;
+
+      input {
+        padding: .5rem 1rem; 
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+      }
+      
+      input:focus {
+        outline: none;
+        border-color: #2b89d0;
+      }
+    }
+  }
+}

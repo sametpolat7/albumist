@@ -76,6 +76,7 @@
       box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
       border-radius: 8px;
       margin-bottom: 3rem;
+      cursor: pointer;
       overflow: hidden;
 
       @include to_tablet {
@@ -84,6 +85,10 @@
 
       @include to_desktop {
         padding: 0 2rem;
+
+        &:hover {
+          border: 1px solid #172554;
+        }
       }
 
       .albums__item__image {
@@ -108,16 +113,21 @@
         text-align: center;
         font-weight: 600;
         font-style: italic;
-        font-size: 14px;
-        color: #172554;
+        font-size: 12px;
         padding: 0 1rem;
 
+        div {
+          margin: 0 2rem;
+        }
+
         @include to_tablet {
-          font-size: 16px;
+          font-size: 14px;
+          padding: 0 1rem;
         }
   
         @include to_desktop {
-          font-size: 18px;
+          font-size: 16px;
+          padding: 0 2rem;
         }
       }
       .albums__item__info {

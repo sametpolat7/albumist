@@ -21,7 +21,7 @@
   .users__list {
     height: 6rem;
     margin-bottom: 2rem;
-    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
     border-radius: 8px;
 
     @include to_tablet {
