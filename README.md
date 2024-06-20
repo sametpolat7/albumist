@@ -14,10 +14,6 @@ Albumist is a simple "User Album Tracker" application. Initially, user, album an
 
 <br>
 
-Live: <a href="https://albumist.onrender.com/" target="_blank">https://albumist.onrender.com/</a>
-
-<br>
-
 ## Getting Started
 
 ```sh
