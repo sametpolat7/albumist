@@ -5,7 +5,7 @@
   border: none;
   padding: .35rem .75rem;
   border-radius: 36px;
-  background-color: #172554;
+  background-color: #133ece;
   color: white;
   font-size: 13px;
   font-weight: 400;
@@ -50,8 +50,15 @@
 }
 
 .submit {
-  padding: .5rem 1rem !important;
-  border: 1px solid #172554 !important;
+  padding: .35rem 1rem !important;
+  background-color: #133ece !important;
+  color: white !important;
   border-radius: 36px !important;
-  font-weight: 600 !important;
+
+  @include to_desktop {
+
+    &:hover {
+      background: rgba(0,118,255,0.9) !important;
+    }
+  }
 }

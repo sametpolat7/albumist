@@ -14,7 +14,7 @@
     <ul>
       <% users.each do |user| %>
         <li class="users__list col-md-9 col-xl-7 mx-auto">
-          <a href="<%= user_path(user) %>"data-turbo-frame="_top" data-turbo-visit-control="reload" class="">
+          <a href="<%= user_path(user) %>"data-turbo-frame="_top" data-turbo-visit-control="reload" >
             <div class="users__list__item flex items-center justify-between h-100">
 
               <div class="flex">
@@ -23,7 +23,7 @@
                   <div class="content__name">
                     <%= user.name %>
                   </div>
-                  <div style="color: #2b89d0">
+                  <div style="color: #133ece">
                     <%= "@" + user.username %>
                   </div>
                 </div>

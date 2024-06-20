@@ -3,6 +3,13 @@ class User < ApplicationRecord
 
   validates :name, :username, :email, :phone, :company, presence: true
   validates :username, :email, uniqueness: true
-  validates :name, :username, length: { minimum: 4, maximum: 32 }
-  validates :phone, numericality: { only_integer: true }
+
+  before_save :downcase_email_and_username
+
+  private
+
+  def downcase_email_and_username
+    self.email = email.downcase
+    self.username = username.downcase
+  end
 end

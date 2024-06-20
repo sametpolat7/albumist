@@ -1,3 +1,5 @@
+@import "mixins/media_queries";
+
 .alert {
   position: relative;
   display: inline-block;
@@ -7,15 +9,16 @@
 
 .alert-success, .alert-notice {
   color: #4bb543;
-  border: 1px solid #4bb543
+  border: 2px solid #4bb543
 }
 
 .alert-alert {
   color: #bb2124;
-  border: 1px solid #bb2124
+  border: 2px solid #bb2124
 }
 
 .close-button {
   position: absolute;
-  top: -12px;
+  top: -14px;
+  right: -14px;
 }

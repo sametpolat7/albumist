@@ -11,7 +11,14 @@
 
 @import "mixins/media_queries";
 
-@import "partials/navbar";
+@import "pages/homepage";
+@import "pages/profile";
+
+@import "partials/flash";
 @import "partials/footer";
+@import "partials/form";
+@import "partials/modal";
+@import "partials/navbar";
+@import "partials/users_list";
 
 @import "utilities/utilities";

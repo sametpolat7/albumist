@@ -33,7 +33,7 @@
 
     #close {
       position: absolute;
-      top: 7px;
+      top: 13px;
       right: 12px;
       padding: .25rem .75rem;
       border-radius: 50%;
@@ -58,16 +58,16 @@
 
       .modal__info__title {
         margin: 0 2rem;
-        font-size: 17px;
+        font-size: 19px;
 
         @include to_tablet {
           margin: 0 3rem;
-          font-size: 19px;
+          font-size: 21px;
         }
     
         @include to_desktop {
           margin: 0 4rem;
-          font-size: 24px;
+          font-size: 27px;
         }
       }
     }
@@ -76,7 +76,7 @@
       margin: 0 1rem;
 
       @include to_desktop {
-        margin: 0 3rem;
+        margin: 0 4rem;
       }
     }
 

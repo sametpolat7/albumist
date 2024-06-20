@@ -35,11 +35,13 @@
       <br><br>
 
       <address>
-        <span><%= @user.street %></span>
-        <span><%= @user.suite %></span>
-        <span><%= @user.city %></span>
+        <%= @user.street %>
+        <%= @user.suite %>
+        <span>
+          <%= @user.city.length > 0 ? "/ #{@user.city}" : "" %>
+        </span>
         <br>
-        <span><%= @user.zipcode %></span>
+        <%= @user.zipcode %>
       </address>
 
       <br>
@@ -95,8 +97,10 @@
             <div class="modal__info">
               <h2 class="modal__info__title" data-modal-target="title"></h2>
               <br>
-              <p>Created at: <%= album.created_at.strftime('%d/%m/%y') %></p>
-              <p><%= album.user.name %></p>
+              <div class="flex justify-around mb-2">
+                <p><%= album.user.name %></p>
+                <p>Created at: <%= album.created_at.strftime('%d/%m/%y') %></p>
+              </div>
             </div>
             <div class="modal__photos">
               <h2 class="t-center">Total Photos: <%= album.photos.count %></h2>
